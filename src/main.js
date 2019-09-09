@@ -100,6 +100,10 @@ import router from "@/router";
 import store from "@/store";
 import "@/style/reset.less";
 
+if ("serviceWorker" in navigator) {
+    navigator.serviceWorker.register("./service-worker.js");
+}
+
 new Vue({
     router,
     store,

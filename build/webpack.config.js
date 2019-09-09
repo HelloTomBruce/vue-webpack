@@ -12,7 +12,7 @@ module.exports = {
         path:          path.resolve(__dirname, "../dist"),
         filename:      "js/[name].[hash:8].js",
         chunkFilename: "js/[name].[hash:8].js",
-        publicPath:    "/"
+        publicPath:    "./"
     },
     module: {
         rules: [
@@ -134,11 +134,12 @@ module.exports = {
         })
     ],
     devServer: {
-        hot:         true,
-        host:        process.env.HOST,
-        port:        process.env.PORT,
-        open:        true,
-        contentBase: path.resolve(__dirname, "../dist")
+        hot:              true,
+        host:             process.env.HOST,
+        port:             process.env.PORT,
+        open:             true,
+        disableHostCheck: true,
+        contentBase:      path.resolve(__dirname, "../dist")
     },
     resolve: {
         alias: {

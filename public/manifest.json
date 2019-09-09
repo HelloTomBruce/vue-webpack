@@ -1,0 +1,15 @@
+{
+    "name": "AALabel",
+    "short_name": "AALabel",
+    "display": "standalone",
+    "start_url": "/",
+    "theme_color": "",
+    "background_color": "",
+    "icons": [
+        {
+            "src": "./logo.png",
+            "sizes": "1024x1024",
+            "type": "image/png"
+        }
+    ]
+}
