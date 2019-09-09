@@ -47,13 +47,13 @@ module.exports = webpackMerge(webpackConfig, {
                         }
                     },
                     {
+                        loader: "postcss-loader"
+                    },
+                    {
                         loader:  "less-loader",
                         options: {
                             javascriptEnabled: true
                         }
-                    },
-                    {
-                        loader: "postcss-loader"
                     }
                 ]
             }

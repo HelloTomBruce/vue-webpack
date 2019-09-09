@@ -1,4 +1,5 @@
 const path = require("path");
+require("dotenv").config();
 const webpack = require("webpack");
 const htmlWebpackPlugin = require("html-webpack-plugin");
 const VueLoaderPlugin = require("vue-loader/lib/plugin");
@@ -15,6 +16,23 @@ module.exports = {
     },
     module: {
         rules: [
+            {
+                test: /\.css$/,
+                use:  [
+                    {
+                        loader: "style-loader"
+                    },
+                    {
+                        loader:  "css-loader",
+                        options: {
+                            importLoaders: 1
+                        }
+                    },
+                    {
+                        loader: "postcss-loader"
+                    }
+                ]
+            },
             {
                 test:    /\.jsx?$/,
                 exclude: /node_modules/,
@@ -117,7 +135,8 @@ module.exports = {
     ],
     devServer: {
         hot:         true,
-        port:        3068,
+        host:        process.env.HOST,
+        port:        process.env.PORT,
         open:        true,
         contentBase: path.resolve(__dirname, "../dist")
     },
