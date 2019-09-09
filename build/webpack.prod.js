@@ -13,11 +13,12 @@ module.exports = webpackMerge(webpackConfig, {
     mode:         "production",
     devtool:      "#source-map",
     optimization: {
+        minimize:    true,
         splitChunks: {
             cacheGroups: {
                 vendors: {
                     name:     "chunk-vendors",
-                    test:     /[/]node_modules[/]/,
+                    test:     /[\\/]node_modules[\\/]/,
                     priority: -10,
                     chunks:   "initial"
                 },
@@ -46,10 +47,13 @@ module.exports = webpackMerge(webpackConfig, {
                         }
                     },
                     {
-                        loader: "postcss-loader"
+                        loader:  "less-loader",
+                        options: {
+                            javascriptEnabled: true
+                        }
                     },
                     {
-                        loader: "less-loader"
+                        loader: "postcss-loader"
                     }
                 ]
             }
@@ -72,8 +76,7 @@ module.exports = webpackMerge(webpackConfig, {
                 preset: [
                     "default",
                     {
-                        mergeLonghand:        false,
-                        cssDeclarationSorter: false
+                        mergeLonghand: false
                     }
                 ]
             }
