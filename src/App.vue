@@ -5,8 +5,8 @@
         <div>
             <p>{{getCount}}</p>
             <mu-button @click="add">
+                <mu-icon value="add"></mu-icon>
                 Add
-                <mu-icon value="check_circle" left></mu-icon>
             </mu-button>
         </div>
         <div>
