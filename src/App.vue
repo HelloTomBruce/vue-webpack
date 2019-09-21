@@ -1,23 +1,16 @@
 <template>
-    <div class="app">
-        <Logo/>
-        <Title title="App"/>
-        <div>
-            <p>{{getCount}}</p>
-            <mu-button @click="add">
-                <mu-icon value="add"></mu-icon>
-                Add
-            </mu-button>
-        </div>
-        <div>
-            <mu-ripple class="link-ripple" color="yellow" :opacity="0.7">
-                <router-link to="/Home">go Home</router-link>
-            </mu-ripple>
-            <mu-ripple class="link-ripple" color="yellow" :opacity="0.7">
-                <router-link to="/About">go About</router-link>
-            </mu-ripple>
-        </div>
-        <router-view></router-view>
+    <div class="app-container">
+        <main class="app-container-main">
+            <router-view></router-view>
+        </main>
+        <mu-container>
+            <mu-bottom-nav>
+                <mu-bottom-nav-item title="查快递" icon="search" to="/main/search"></mu-bottom-nav-item>
+                <mu-bottom-nav-item title="寄快递" icon="local_shipping" to="/main/send"></mu-bottom-nav-item>
+                <mu-bottom-nav-item title="更多" icon="widgets" to="/main/widgets"></mu-bottom-nav-item>
+                <mu-bottom-nav-item title="我" icon="person" to="/main/mine"></mu-bottom-nav-item>
+            </mu-bottom-nav>
+        </mu-container>
     </div>
 </template>
 
@@ -47,23 +40,19 @@ export default {
 </script>
 
 <style lang="less" scoped>
-.app {
+.app-container{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-flow: column wrap;
     color: lightblue;
     font-size: 26px;
     font-weight: 500;
     text-align: center;
-    .link-ripple {
-        position: relative;
-        margin-top: 20px;
-        width: 120px;
-        height: 50px;
-        display: inline-flex;
-        justify-content: center;
-        align-items: center;
-        margin-right: 16px;
-        background-color: #2196f3;
-        border-radius: 4px;
-        color: #fff;
+    overflow: hidden;
+    &-main {
+        display: block;
+        flex: 1;
     }
 }
 </style>

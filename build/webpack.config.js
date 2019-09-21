@@ -4,6 +4,8 @@ const webpack = require("webpack");
 const htmlWebpackPlugin = require("html-webpack-plugin");
 const VueLoaderPlugin = require("vue-loader/lib/plugin");
 
+console.log( path.resolve(__dirname, "../dist"))
+
 module.exports = {
     entry: {
         main: path.resolve(__dirname, "../src/main.js")
@@ -12,7 +14,7 @@ module.exports = {
         path:          path.resolve(__dirname, "../dist"),
         filename:      "js/[name].[hash:8].js",
         chunkFilename: "js/[name].[hash:8].js",
-        publicPath:    "./"
+        publicPath:    "/"
     },
     module: {
         rules: [

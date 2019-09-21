@@ -50,7 +50,7 @@ import {
 import "muse-ui/lib/styles/theme.less";
 import "typeface-roboto";
 
-theme.use("dark");
+theme.use("light");
 
 Vue.use(Alert);
 Vue.use(AppBar);
