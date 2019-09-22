@@ -4,8 +4,6 @@ const webpack = require("webpack");
 const htmlWebpackPlugin = require("html-webpack-plugin");
 const VueLoaderPlugin = require("vue-loader/lib/plugin");
 
-console.log( path.resolve(__dirname, "../dist"))
-
 module.exports = {
     entry: {
         main: path.resolve(__dirname, "../src/main.js")
@@ -141,7 +139,17 @@ module.exports = {
         port:             process.env.PORT,
         open:             true,
         disableHostCheck: true,
-        contentBase:      path.resolve(__dirname, "../dist")
+        contentBase:      path.resolve(__dirname, "../dist"),
+        proxy:            {
+            "/music": {
+                target:      process.env.MUSIC_API,
+                pathRewrite: {
+                    "^/music": ""
+                },
+                changeOrigin: true,
+                secure:       false
+            }
+        }
     },
     resolve: {
         alias: {

@@ -1,11 +1,11 @@
 <template>
-    <Title title="Send Page"/>
+    <Title title="Comment Page"/>
 </template>
 
 <script>
 import Title from '@/components/Title'
 export default {
-    name: 'SendPage',
+    name: 'CommentPage',
     data () {
         return {}
     },

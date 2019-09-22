@@ -7,28 +7,28 @@ export default new VueRouter({
     mode:   "hash",
     routes: [
         {
-            path:      "/main/search",
+            path:      "/main/find",
             component: () =>
-                import(/* webpackChunkName: "main-search" */ "@/pages/main/search")
+                import(/* webpackChunkName: "main-find" */ "@/pages/main/find")
         },
         {
-            path:      "/main/send",
+            path:      "/main/ranking",
             component: () =>
-                import(/* webpackChunkName: "main-send" */ "@/pages/main/send")
+                import(/* webpackChunkName: "main-ranking" */ "@/pages/main/ranking")
         },
         {
-            path:      "/main/widgets",
+            path:      "/main/video",
             component: () =>
-                import(/* webpackChunkName: "main-widgets" */ "@/pages/main/widgets")
+                import(/* webpackChunkName: "main-video" */ "@/pages/main/video")
         },
         {
-            path:      "/main/mine",
+            path:      "/main/comment",
             component: () =>
-                import(/* webpackChunkName: "main-mine" */ "@/pages/main/mine")
+                import(/* webpackChunkName: "main-comment" */ "@/pages/main/comment")
         },
         {
             path:     "*",
-            redirect: "/main/search"
+            redirect: "/main/find"
         }
     ]
 });

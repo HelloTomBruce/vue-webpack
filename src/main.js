@@ -12,6 +12,7 @@ import {
     Breadcrumbs,
     Button,
     Card,
+    Carousel,
     Checkbox,
     Chip,
     DateInput,
@@ -62,6 +63,7 @@ Vue.use(BottomSheet);
 Vue.use(Breadcrumbs);
 Vue.use(Button);
 Vue.use(Card);
+Vue.use(Carousel);
 Vue.use(Checkbox);
 Vue.use(Chip);
 Vue.use(DateInput);

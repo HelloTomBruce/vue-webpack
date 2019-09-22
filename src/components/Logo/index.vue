@@ -1,6 +1,6 @@
 <template>
-    <div class="logo">
-        <img src="@/assets/img/logo.png" class="logo-img"/>
+    <div class="logo-container">
+        <img src="https://cdn.kuaidi100.com/images/m/change/banner.png" class="logo-img"/>
     </div>
 </template>
 
@@ -14,11 +14,11 @@ export default {
 </script>
 
 <style lang="less" scoped>
-.logo {
-    text-align: center;
-    &-img {
-        width: 200px;
-        height: 200px;
+.logo-container {
+    width: 100%;
+    .logo-img {
+        width: 100%;
+        height: 563px;
     }
 }
 </style>

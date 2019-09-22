@@ -1,11 +1,11 @@
 <template>
-    <Title title="Search Page"/>
+    <Title title="Ranking Page"/>
 </template>
 
 <script>
 import Title from '@/components/Title'
 export default {
-    name: 'SearchPage',
+    name: 'RankingPage',
     data () {
         return {}
     },

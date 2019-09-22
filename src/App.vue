@@ -3,12 +3,12 @@
         <main class="app-container-main">
             <router-view></router-view>
         </main>
-        <mu-container>
+        <mu-container class="footer">
             <mu-bottom-nav>
-                <mu-bottom-nav-item title="查快递" icon="search" to="/main/search"></mu-bottom-nav-item>
-                <mu-bottom-nav-item title="寄快递" icon="local_shipping" to="/main/send"></mu-bottom-nav-item>
-                <mu-bottom-nav-item title="更多" icon="widgets" to="/main/widgets"></mu-bottom-nav-item>
-                <mu-bottom-nav-item title="我" icon="person" to="/main/mine"></mu-bottom-nav-item>
+                <mu-bottom-nav-item title="发现" icon="search" to="/main/find"></mu-bottom-nav-item>
+                <mu-bottom-nav-item title="榜单" icon="equalizer" to="/main/ranking"></mu-bottom-nav-item>
+                <mu-bottom-nav-item title="视频" icon="music_video" to="/main/video"></mu-bottom-nav-item>
+                <mu-bottom-nav-item title="评论" icon="message" to="/main/comment"></mu-bottom-nav-item>
             </mu-bottom-nav>
         </mu-container>
     </div>
@@ -16,8 +16,6 @@
 
 <script>
 import { mapActions, mapGetters } from 'vuex'
-import Title from '@/components/Title'
-import Logo from '@/components/Logo'
 
 export default {
     name: 'App',
@@ -29,10 +27,7 @@ export default {
     computed: {
         ...mapGetters(['getCount'])
     },
-    components: {
-        Title,
-        Logo
-    },
+    components: {},
     methods: {
         ...mapActions(['add'])
     }
@@ -50,9 +45,21 @@ export default {
     font-weight: 500;
     text-align: center;
     overflow: hidden;
+    background: #efeff4;
     &-main {
         display: block;
         flex: 1;
+        height: 100%;
+        box-sizing: border-box;
+        padding-bottom: 300px;
+        overflow-y: auto;
+        overflow-x: hidden; 
+    }
+    .container.footer {
+        padding: 0;
+        position: fixed;
+        bottom: 0;
+        z-index: 100;
     }
 }
 </style>
