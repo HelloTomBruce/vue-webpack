@@ -4,7 +4,7 @@
             推荐歌单    
         </div>
         <div class="recommend-sheet-list">
-            <div class="recommend-sheet-item" v-for="(item, index) in list" :key="index">
+            <div class="recommend-sheet-item" @click="linkToDetail(item.id)" v-for="(item, index) in list" :key="index">
                 <div class="recommend-sheet-item-cover">
                     <img :src="item.picUrl"/>
                 </div>
@@ -41,6 +41,9 @@ export default {
             request.get(API.recommentPlayList, params).then(res => {
                 this.list = res.data.result
             })
+        },
+        linkToDetail (id) {
+            this.$router.push(`/sheet/detail?id=${id}`)
         }
     },
     filters: {
@@ -59,12 +62,12 @@ export default {
 
 <style lang="less" scoped>
 .recommend-sheet {
-    padding-top: 60px;
+    padding-top: 30px;
     &-title {
-        padding-bottom: 30px;
+        padding-bottom: 15px;
         color: #333;
         font-weight: 500;
-        font-size: 70px;
+        font-size: 35px;
         text-align: left;
     }
     &-list {
@@ -77,7 +80,7 @@ export default {
         position: relative;
         flex: 1;
         min-width: 30%;
-        padding: 10px 20px;
+        padding: 5px 10px;
         color: #333;
         &:nth-child(1), &:nth-child(4) {
             padding-left: 0;
@@ -87,31 +90,31 @@ export default {
         }
         &-cover {
             width: 100%;
-            height: 370px;
+            height: 185px;
             img {
                 width: 100%;
                 height: 100%;
-                border-radius: 10px;
+                border-radius: 5px;
             }
         }
         &-info {
             position: absolute;
-            top: 20px;
-            right: 30px;
+            top: 10px;
+            right: 15px;
             display: inline-flex;
             align-items: center;
             color: #fff;
-            font-size: 28px;
+            font-size: 24px;
             .mu-icon {
-                margin-right: 10px;
+                margin-right: 5px;
             }
         }
         &-title {
-            margin: 20px 0 30px;
-            line-height: 70px;
-            max-height: 130px;
+            margin: 10px 0 15px;
+            line-height: 35px;
+            max-height: 65px;
             overflow: hidden;
-            font-size: 30px;
+            font-size: 24px;
         }
     }
 }

@@ -1,9 +1,9 @@
 <template>
     <div class="app-container">
-        <main class="app-container-main">
+        <main class="app-container-main" :class="hasBottomNav ? 'has-bottom-nav' : ''">
             <router-view></router-view>
         </main>
-        <mu-container class="footer">
+        <mu-container class="footer" v-show="hasBottomNav">
             <mu-bottom-nav>
                 <mu-bottom-nav-item title="发现" icon="search" to="/main/find"></mu-bottom-nav-item>
                 <mu-bottom-nav-item title="榜单" icon="equalizer" to="/main/ranking"></mu-bottom-nav-item>
@@ -17,6 +17,13 @@
 <script>
 import { mapActions, mapGetters } from 'vuex'
 
+const BottomNavList = [
+    '/main/find',
+    '/main/ranking',
+    '/main/video',
+    '/main/comment'
+]
+
 export default {
     name: 'App',
     data () {
@@ -25,7 +32,10 @@ export default {
         }
     },
     computed: {
-        ...mapGetters(['getCount'])
+        ...mapGetters(['getCount']),
+        hasBottomNav () {
+            return BottomNavList.indexOf(this.$route.path) !== -1
+        }
     },
     components: {},
     methods: {
@@ -36,12 +46,12 @@ export default {
 
 <style lang="less" scoped>
 .app-container{
-    width: 100%;
+    width: 750px;
     height: 100%;
     display: flex;
     flex-flow: column wrap;
     color: lightblue;
-    font-size: 26px;
+    font-size: 28px;
     font-weight: 500;
     text-align: center;
     overflow: hidden;
@@ -51,15 +61,20 @@ export default {
         flex: 1;
         height: 100%;
         box-sizing: border-box;
-        padding-bottom: 300px;
         overflow-y: auto;
         overflow-x: hidden; 
+        &.has-bottom-nav {
+            padding-bottom: 120px;
+        }
     }
     .container.footer {
         padding: 0;
         position: fixed;
         bottom: 0;
         z-index: 100;
+        .mu-bottom-nav {
+            height: 120px;
+        }
     }
 }
 </style>

@@ -50,10 +50,10 @@ export default {
     justify-content: center;
     width: 100%;
     box-sizing: border-box;
-    padding: 60px 0;
+    padding: 30px 0;
     border-bottom: 1px solid #fff;
     &-item {
-        padding: 0 56px;
+        padding: 0 28px;
         color: #2196f3;
         &:first-child {
             padding-left: 0;

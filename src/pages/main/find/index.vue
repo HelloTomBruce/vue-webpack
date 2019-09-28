@@ -2,7 +2,7 @@
     <mu-container class="find-page">
         <mu-carousel>
             <mu-carousel-item v-for="(item, index) in bannerList" :key="index" @click="linkToDetail(item)">
-                <img :src="item.imageUrl">
+                <img :src="item.pic">
             </mu-carousel-item>
         </mu-carousel>
         <FunctionSheet/>
@@ -50,34 +50,36 @@ export default {
 
 <style lang="less">
 .container.find-page {
-    padding: 56px;
+    width: 750px;
+    padding: 28px;
+    box-sizing: border-box;
     .mu-carousel {
-        height: 600px;
+        height: 300px;
         img {
             width: 100%;
             height: 100%;
         }
         .mu-carousel-button.mu-icon-button {
-            width: 100px;
-            height: 100px;
-            margin-top: -50px;
+            width: 50px;
+            height: 50px;
+            margin-top: -25px;
         }
         .mu-carousel-indicators {
-            height: 100px;
+            height: 50px;
         }
         .mu-carousel-indicator-button {
-            width: 70px;
-            height: 70px;
+            width: 35px;
+            height: 35px;
         }
         .mu-carousel-indicators {
             .mu-carousel-indicator-icon {
-                width: 30px;
-                height: 30px;
+                width: 15px;
+                height: 15px;
             }
         }
         .mu-carousel-svg-icon {
-            width: 70px;
-            height: 70px;
+            width: 35px;
+            height: 35px;
         }
     }
 }

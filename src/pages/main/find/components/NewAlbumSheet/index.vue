@@ -49,12 +49,12 @@ export default {
 
 <style lang="less" scoped>
 .new-song-sheet {
-    padding-top: 60px;
+    padding-top: 30px;
     &-title {
-        padding-bottom: 30px;
+        padding-bottom: 15px;
         color: #333;
         font-weight: 500;
-        font-size: 70px;
+        font-size: 35px;
         text-align: left;
     }
     &-list {
@@ -67,7 +67,7 @@ export default {
         position: relative;
         flex: 1;
         min-width: 30%;
-        padding: 10px 20px;
+        padding: 5px 10px;
         color: #333;
         &:nth-child(1), &:nth-child(4) {
             padding-left: 0;
@@ -77,19 +77,19 @@ export default {
         }
         &-cover {
             width: 100%;
-            height: 370px;
+            height: 185px;
             img {
                 width: 100%;
                 height: 100%;
-                border-radius: 10px;
+                border-radius: 5px;
             }
         }
         &-title {
-            margin: 20px 0 0px;
-            line-height: 70px;
-            max-height: 130px;
+            margin: 10px 0 0px;
+            line-height: 35px;
+            max-height: 65px;
             overflow: hidden;
-            font-size: 30px;
+            font-size: 24px;
             white-space: nowrap;
             overflow: hidden;
             text-overflow: ellipsis;

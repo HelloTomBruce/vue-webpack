@@ -27,6 +27,16 @@ export default new VueRouter({
                 import(/* webpackChunkName: "main-comment" */ "@/pages/main/comment")
         },
         {
+            path:      "/sheet/detail",
+            component: () =>
+                import(/* webpackChunkName: "sheet-detail" */ "@/pages/sheet/detail")
+        },
+        {
+            path:      "/play/music",
+            component: () =>
+                import(/* webpackChunkName: "play-music" */ "@/pages/play/music")
+        },
+        {
             path:     "*",
             redirect: "/main/find"
         }
